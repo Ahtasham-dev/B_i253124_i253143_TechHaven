@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,30 +8,40 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
                 <li><a href="#about">About us</a></li>
                 <li><a href="#contact">Contact us</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
         
         <div class="logo">
+            <a href="index.html">
             <img src="/public/logo-black.svg" alt="logo">
+            </a>
         </div>
         
         <div class="header-icons">
-            <button class="icon-btn">♡</button>
-            <button class="icon-btn">👤</button>
-            <button class="icon-btn">
-                🛒
-                <span class="cart-badge">2</span>
-            </button>
+            <a href="#" class="icon-btn">
+                <img src="/public/Img.svg" alt="favourite">
+            </a>
+            <a href="#" class="icon-btn">
+                <img src="/public/person.svg" alt="profile">
+            </a>
+            <a href="./cart.html" class="icon-btn">
+                <img src="/public/cart 1.svg" alt="">
+                <!-- <span class="cart-badge">2</span> -->
+            </a>
             <div class="search-box">
-                <span>🔍</span>
+                <span><img src="/public/Search.svg" alt=""></span>
                 <input type="text" placeholder="Search">
             </div>
         </div>
@@ -182,5 +193,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/navbar.js"></script>
 </body>
 </html>

@@ -1,30 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.nav-toggle');
-    const navLeft = document.querySelector('.nav-left');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
 
-    if (!toggle || !navLeft) return;
+    if (!hamburger || !navMenu) return;
 
-    toggle.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', String(!expanded));
-        navLeft.classList.toggle('open');
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function () {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
-    // close on esc
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu on escape key
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            toggle.setAttribute('aria-expanded', 'false');
-            navLeft.classList.remove('open');
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 
-    // close when clicking outside on small screens
+    // Close menu when clicking outside
     document.addEventListener('click', function (e) {
-        if (!navLeft.classList.contains('open')) return;
-        const isInside = navLeft.contains(e.target) || toggle.contains(e.target);
-        if (!isInside) {
-            toggle.setAttribute('aria-expanded', 'false');
-            navLeft.classList.remove('open');
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 });
