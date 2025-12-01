@@ -157,8 +157,8 @@ Then open: `http://localhost:8000`
 
 ## 👥 Authors
 
-- B_i253124
-- B_i253143
+- Ahtasham Ul Haq
+- Abdul rehman
 
 ## 📄 License
 
