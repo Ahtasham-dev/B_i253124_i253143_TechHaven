@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Haven - Login</title>
+    <title>Tech Haven - Sign Up</title>
     <link rel="stylesheet" href="./css/auth.css">
 </head>
 <body>
@@ -21,31 +21,32 @@
         <!-- Right side form -->
         <div class="auth-form-panel">
             <div class="auth-form-inner">
-                <h1 class="auth-title">Login to your Account</h1>
-                <p class="auth-subtitle">Welcome back! Please enter your details</p>
+                <h1 class="auth-title">Create a new account</h1>
+                <p class="auth-subtitle">Create your account to start your Tech journey</p>
 
                 <form class="auth-form">
                     <div class="form-group">
-                        <label for="login-email">Email</label>
-                        <input type="email" id="login-email" placeholder="johndoe@gmail.com" required>
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="johndoe@gmail.com" required>
                     </div>
 
                     <div class="form-group">
                         <div class="label-row">
-                            <label for="login-password">Password</label>
+                            <label for="signup-password">Password</label>
                             <button type="button" class="text-link small">Show</button>
                         </div>
-                        <input type="password" id="login-password" placeholder="Minimum 8 characters" required>
+                        <input type="password" id="signup-password" placeholder="Minimum 8 characters" required>
                     </div>
 
-                    <div class="form-row space-between">
-                        <a href="#" class="text-link">Forgot password? <span>Click here</span></a>
-                    </div>
-
-                    <button type="submit" class="btn-primary auth-full-width">Sign In</button>
+                    <button type="submit" class="btn-primary auth-full-width">Sign Up</button>
 
                     <div class="auth-divider">
-                        <span>Or sign in with</span>
+                        <span>Or sign up with</span>
                     </div>
 
                     <button type="button" class="btn-outline auth-full-width">
@@ -59,12 +60,12 @@
                     </button>
 
                     <p class="auth-switch">
-                        Don’t have an account?
-                        <a href="signup.html">Sign Up</a>
+                        Already have an account?
+                        <a href="login.html">Sign In</a>
                     </p>
 
                     <p class="auth-legal">
-                        By signing in, you agree to our
+                        By signing up, you agree to our
                         <a href="#">Terms of Service</a> and
                         <a href="#">Privacy Policy</a>.
                     </p>
@@ -74,3 +75,4 @@
     </div>
 </body>
 </html>
+

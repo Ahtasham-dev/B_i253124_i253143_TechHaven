@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Haven - Gear That Works Smarter</title>
+    <title>Cart - Tech Haven</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="./products.html">Products</a></li>
                 <li><a href="./Aboutus.html">About us</a></li>
                 <li><a href="./Contactus.html">Contact us</a></li>
@@ -25,7 +25,7 @@
         
         <div class="logo">
             <a href="index.html">
-            <img src="/public/logo-black.svg" alt="logo">
+                <img src="/public/logo-black.svg" alt="logo">
             </a>
         </div>
         
@@ -33,12 +33,12 @@
             <a href="#" class="icon-btn">
                 <img src="/public/Img.svg" alt="favourite">
             </a>
-            <a href="./login.html" class="icon-btn">
+            <a href="#" class="icon-btn">
                 <img src="/public/person.svg" alt="profile">
             </a>
             <a href="./cart.html" class="icon-btn">
-                <img src="/public/cart 1.svg" alt="">
-                <!-- <span class="cart-badge">2</span> -->
+                <img src="/public/cart 1.svg" alt="cart">
+                <span class="cart-badge" id="cartCount">3</span>
             </a>
             <div class="search-box">
                 <span><img src="/public/Search.svg" alt=""></span>
@@ -47,81 +47,40 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-tagline">Smart. Reliable. Stylish</div>
-            <h1>Tech Haven — Gear That Works Smarter</h1>
-            <p class="hero-description">Discover the latest gadgets built for performance, comfort, and everyday innovation.</p>
-            <button class="btn-primary">Shop Now</button>
-        </div>
-        <div class="hero-image">
-            <img src="/public/hero-2.png" alt="Gaming PC">
-        </div>
-    </section>
+    <main class="cart-page">
+        <div class="cart-container">
+            <section class="cart-items">
+                <h1 class="cart-title">Cart</h1>
+                <div id="cartItemsList" class="cart-items-list">
+                    <!-- Cart items rendered via JavaScript -->
+                </div>
+            </section>
 
-    <section class="section">
-        <h2 class="section-title">Best of Tech Haven</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="product-badge badge-red">Best Seller</span>
-                    <img src="/public/products/apple-tv-4k-wifi.png" alt="Apple TV 4k WiFi">
+            <aside class="cart-summary">
+                <h2>Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summarySubtotal">$0.00</span>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">Apple TV 4k WiFi</h3>
-                    <p class="product-category">Home Appliances</p>
-                    <div class="product-footer">
-                        <span class="product-price">$98.30</span>
-                        <span>1 Colour</span>
-                    </div>
+                <div class="summary-row">
+                    <span>Estimated Delivery &amp; Handling</span>
+                    <span id="summaryDelivery">$0.00</span>
                 </div>
-            </div>
+                <div class="summary-total-row">
+                    <span>Total</span>
+                    <span id="summaryTotal">$0.00</span>
+                </div>
 
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="product-badge badge-green">Extra 20% off</span>
-                    <img src="/public/products/14-inch-macbook-pro-12-core-1tb-space-black.png" alt="14-inch Macbook Pro">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">14-inch Macbook Pro 12 Core 1TB Space</h3>
-                    <p class="product-category">Laptops</p>
-                    <div class="product-footer">
-                        <span class="product-price">$98.30</span>
-                        <span>2 Colour</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="product-badge badge-green">Extra 10% off</span>
-                    <img src="/public/products/airpods-max.png" alt="Airpods Max">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Airpods Max</h3>
-                    <p class="product-category">Headphones</p>
-                    <div class="product-footer">
-                        <span class="product-price">$98.30</span>
-                        <span>4 Colour</span>
-                    </div>
-                </div>
-            </div>
+                <button class="btn-checkout" onclick="window.location.href='Payment.html'">
+                    Proceed to Checkout
+                </button>
+                <button class="btn-continue" onclick="window.location.href='products.html'">
+                    Continue Shopping
+                </button>
+            </aside>
         </div>
-    </section>
+    </main>
 
-    <!-- Trending Section -->
-    <section class="trending">
-        <div class="trending-content">
-            <h2>Tech Haven — Innovation That Works For You</h2>
-            <p class="trending-description">From performance gadgets to everyday essentials, explore tech built to fit your lifestyle.</p>
-            <button class="btn-secondary">Shop Now</button>
-        </div>
-        <div class="trending-image">
-            <img src="/public/hero-1.png" alt="iPhone">
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column footer-logo-column">
@@ -189,6 +148,9 @@
         </div>
     </footer>
 
+    <script src="./js/cart.js"></script>
     <script src="./js/navbar.js"></script>
 </body>
 </html>
+
+
