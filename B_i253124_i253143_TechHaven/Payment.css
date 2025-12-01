@@ -1,0 +1,278 @@
+/* ---------------- GLOBAL STYLES ---------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.logo img {
+    width: 140px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+}
+
+/* ---------------- MAIN LAYOUT ---------------- */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+
+/* ---------------- LEFT SIDE FORM ---------------- */
+
+.form-section {
+    width: 55%;
+}
+
+.form-section h2 {
+    font-size: 28px;
+}
+
+.form-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Input styles */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.row-2 {
+    display: flex;
+    gap: 20px;
+}
+
+/* Discount row */
+
+.discount-row {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.discount-row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.discount-row button {
+    padding: 12px 18px;
+    background: #d0cfff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Payment buttons */
+
+.pay-btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.debit {
+    background: black;
+    color: white;
+}
+
+.paypal {
+    background: #b28bff;
+    color: white;
+}
+
+.apple {
+    background: #ff3b7f;
+    color: white;
+}
+
+/* ---------------- RIGHT SIDE SUMMARY ---------------- */
+
+.summary-box {
+    width: 38%;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.summary-box h3 {
+    font-size: 16px;
+    color: #555;
+}
+
+.price {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 15px 0 25px;
+    text-align: left;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+    font-size: 17px;
+}
+
+.total {
+    font-weight: bold;
+    padding-top: 12px;
+    border-top: 2px solid #ccc;
+}
+
+.place-order {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: black;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #0d0d0d;
+    color: white;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    display: block;
+    margin: 6px 0;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    background: #444;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+}
