@@ -1,4 +1,3 @@
-// Products Array - All products data
 const products = [
     {
         id: 1,
@@ -120,35 +119,29 @@ const products = [
     }
 ];
 
-// Filter and Sort State
 let filteredProducts = [...products];
 let selectedCategories = [];
 let selectedPriceRange = null;
 let currentSort = 'default';
 
-// Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     renderProducts(products);
     updateProductCount(products.length);
 });
 
-// Setup event listeners for filters
 function setupEventListeners() {
-    // Category checkboxes
     const categoryCheckboxes = document.querySelectorAll('input[data-filter="category"]');
     categoryCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', handleCategoryFilter);
     });
 
-    // Price radio buttons
     const priceRadios = document.querySelectorAll('input[data-filter="price"]');
     priceRadios.forEach(radio => {
         radio.addEventListener('change', handlePriceFilter);
     });
 }
 
-// Handle category filter
 function handleCategoryFilter() {
     selectedCategories = [];
     const checkedBoxes = document.querySelectorAll('input[data-filter="category"]:checked');
@@ -159,7 +152,6 @@ function handleCategoryFilter() {
     applyFilters();
 }
 
-// Handle price filter
 function handlePriceFilter() {
     const selectedRadio = document.querySelector('input[data-filter="price"]:checked');
     selectedPriceRange = selectedRadio ? selectedRadio.value : null;
@@ -167,14 +159,11 @@ function handlePriceFilter() {
     applyFilters();
 }
 
-// Apply all filters
 function applyFilters() {
     filteredProducts = products.filter(product => {
-        // Category filter
         const categoryMatch = selectedCategories.length === 0 || 
                              selectedCategories.includes(product.category);
         
-        // Price filter
         let priceMatch = true;
         if (selectedPriceRange) {
             const price = product.price;
@@ -197,22 +186,18 @@ function applyFilters() {
         return categoryMatch && priceMatch;
     });
     
-    // Apply current sort
     applySort();
     
-    // Render filtered products
     renderProducts(filteredProducts);
     updateProductCount(filteredProducts.length);
 }
 
-// Handle sorting
 function handleSort() {
     currentSort = document.getElementById('sortSelect').value;
     applySort();
     renderProducts(filteredProducts);
 }
 
-// Apply sort to filtered products
 function applySort() {
     switch(currentSort) {
         case 'price-low':
@@ -229,13 +214,11 @@ function applySort() {
             break;
         case 'default':
         default:
-            // Reset to original order (by id)
             filteredProducts.sort((a, b) => a.id - b.id);
             break;
     }
 }
 
-// Render products to the grid
 function renderProducts(productsToRender) {
     const productsGrid = document.getElementById('productsGrid');
     
@@ -262,12 +245,10 @@ function renderProducts(productsToRender) {
     `).join('');
 }
 
-// Update product count
 function updateProductCount(count) {
     document.getElementById('productCount').textContent = count;
 }
 
-// Toggle filter section
 function toggleFilter(filterId) {
     const filterContent = document.getElementById(filterId);
     const filterHeader = filterContent.previousElementSibling;
@@ -277,7 +258,6 @@ function toggleFilter(filterId) {
     toggle.textContent = filterContent.classList.contains('collapsed') ? '+' : '−';
 }
 
-// Toggle sidebar visibility
 function toggleSidebar() {
     const sidebar = document.getElementById('filtersSidebar');
     const btn = document.getElementById('hideFiltersBtn');
@@ -286,7 +266,6 @@ function toggleSidebar() {
     btn.textContent = sidebar.classList.contains('hidden') ? 'Show Filters' : 'Hide Filters';
 }
 
-// Export products array for use in other files
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { products };
 }

@@ -1,4 +1,3 @@
-// Compare Page Logic
 
 function getQueryParam(key) {
     const params = new URLSearchParams(window.location.search);
@@ -82,12 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // If there is at least one candidate, pre-select the first one to match the mock
     if (sameCategoryProducts.length > 0) {
         const first = sameCategoryProducts[0];
         selectEl.value = first.id.toString();
 
-        // Ensure right column has id rightProduct
         const rightColumn = document.querySelector(".product-column.divider");
         if (rightColumn) {
             rightColumn.id = "rightProduct";

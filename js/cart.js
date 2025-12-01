@@ -1,4 +1,3 @@
-// Simple cart data for demo (matches the design)
 const cartItems = [
   {
     id: 1,
@@ -78,7 +77,6 @@ function renderCart() {
     )
     .join("");
 
-  // Attach events for quantity and remove
   listEl.querySelectorAll(".cart-item").forEach((row) => {
     const id = parseInt(row.getAttribute("data-id"), 10);
     const item = cartItems.find((p) => p.id === id);

@@ -1,19 +1,15 @@
-// Product Details Page JavaScript
 
-// Helper: read query parameter
 function getQueryParam(key) {
     const params = new URLSearchParams(window.location.search);
     return params.get(key);
 }
 
-// Determine current product (fallback to the main MacBook Pro)
 let currentProductId = parseInt(getQueryParam("id") || "9", 10);
 let currentProduct =
     typeof products !== "undefined"
         ? products.find((p) => p.id === currentProductId) || products.find((p) => p.id === 9)
         : null;
 
-// Quantity Management
 let quantity = 2;
 
 function changeQuantity(delta) {
@@ -21,11 +17,9 @@ function changeQuantity(delta) {
     document.getElementById('quantityValue').textContent = quantity;
 }
 
-// Image Navigation
 function changeMainImage(imageSrc) {
     document.getElementById('mainProductImage').src = imageSrc;
     
-    // Update active thumbnail
     const thumbnails = document.querySelectorAll('.thumbnail');
     thumbnails.forEach(thumb => {
         thumb.classList.remove('active');
@@ -35,24 +29,21 @@ function changeMainImage(imageSrc) {
     });
 }
 
-// Thumbnail Navigation
 let thumbnailScrollPosition = 0;
 
 function navigateThumbnails(direction) {
     const thumbnailsWrapper = document.querySelector('.thumbnails-wrapper');
     const thumbnails = document.querySelector('.thumbnails');
-    const thumbnailWidth = 95; // 80px + 15px gap
+    const thumbnailWidth = 95;
     
     thumbnailScrollPosition += direction * thumbnailWidth;
     
-    // Limit scrolling
     const maxScroll = thumbnails.scrollWidth - thumbnailsWrapper.offsetWidth;
     thumbnailScrollPosition = Math.max(0, Math.min(thumbnailScrollPosition, maxScroll));
     
     thumbnails.style.transform = `translateX(-${thumbnailScrollPosition}px)`;
 }
 
-// Toggle Collapsible Sections
 function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
     const header = section.previousElementSibling;
@@ -60,7 +51,6 @@ function toggleSection(sectionId) {
     
     section.classList.toggle('collapsed');
     
-    // Update toggle icon
     if (section.classList.contains('collapsed')) {
         if (sectionId === 'reviews') {
             toggle.textContent = '▼';
@@ -76,11 +66,8 @@ function toggleSection(sectionId) {
     }
 }
 
-// Load Related Products
 function loadRelatedProducts() {
-    // Get products from products.js
     if (typeof products !== "undefined") {
-        // Show 3 related products from the same category, excluding current product
         const relatedProducts = products
             .filter(
                 (p) =>
@@ -109,11 +96,9 @@ function loadRelatedProducts() {
     }
 }
 
-// Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     loadRelatedProducts();
     
-    // Set up thumbnail click handlers
     const thumbnails = document.querySelectorAll('.thumbnail');
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener('click', function() {
@@ -121,17 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add to bag functionality
     const addToBagBtn = document.querySelector('.btn-add-to-bag');
     if (addToBagBtn) {
         addToBagBtn.addEventListener('click', function() {
             alert(`Added ${quantity} item(s) to bag!`);
             console.log(`Added ${quantity} item(s) to bag!`)
-            // Here you would typically update cart state
         });
     }
     
-    // Favorite button functionality
     const favoriteBtn = document.querySelector('.btn-favorite');
     if (favoriteBtn) {
         let isFavorited = false;
@@ -145,13 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Compare button functionality
     const compareBtn = document.querySelector('.btn-compare');
     if (compareBtn && currentProduct) {
         compareBtn.addEventListener('click', function () {
             const category = encodeURIComponent(currentProduct.category);
             const baseId = currentProduct.id;
-            // Redirect to compare page with base product and category
             window.location.href = `compare.html?baseId=${baseId}&category=${category}`;
         });
     }

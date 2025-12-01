@@ -6,21 +6,18 @@
   <link rel="stylesheet" href="./css/index.css" />
   <meta name="description" content="Contact Tech Haven for support, partnerships, and inquiries." />
   <style>
-    /* Color Variables (FINE-TUNED FOR ACCURACY) */
     :root{
       --bg:#ffffff;
-      --text:#111317; /* Very dark text */
-      --muted:#6b7280; /* Medium gray for secondary text */
+      --text:#111317;
+      --muted:#6b7280;
       --white:#ffffff;
-      --panel:#000000; /* Pure black for contact card and footer */
-      --primary:#000000; /* Pure black for button */
-      --border-light:#e5e7eb; /* Very light gray for separators */
-      --border-input:#d1d5db; /* Light gray border for form inputs */
-      --footer-text:#9ca3af; /* Light gray for footer links */
-      --card-text-light:#cbd5e1; /* Even lighter gray for text inside black card */
+      --panel:#000000;
+      --primary:#000000;
+      --border-light:#e5e7eb;
+      --border-input:#d1d5db;
+      --footer-text:#9ca3af;
+      --card-text-light:#cbd5e1;
     }
-
-    /* Global Reset and Typography */
     *{box-sizing:border-box}
     html,body{
       margin:0;padding:0;
@@ -32,10 +29,9 @@
     a{color:var(--text);text-decoration:none}
     hr {border: 0; border-top: 1px solid var(--border-light); margin: 0;}
 
-    /* --- 1. Header / Nav --- */
     header{
       background:var(--white);
-      border-bottom:1px solid #eee; /* Subtle border for header */
+      border-bottom:1px solid #eee;
       position:sticky;top:0;z-index:50;
     }
     .nav{
@@ -57,14 +53,12 @@
     }
     .search-link{font-size:14px;font-weight:500;margin-left:8px; display: flex; align-items: center; gap: 4px; color: var(--text);}
 
-    /* --- 2. Hero title --- */
     .hero{
       max-width:900px;margin:50px auto 30px;padding:0 20px;text-align:center;
     }
     .hero h1{margin:0 0 10px;font-size:36px;font-weight: 600;}
     .hero p{margin:0;color:var(--muted);font-size:16px;}
 
-    /* --- 3. Contact layout (The two-column box) --- */
     .contact-wrap{
       display:grid;
       grid-template-columns: 350px 1fr; 
@@ -78,7 +72,6 @@
       .contact-wrap{grid-template-columns:1fr}
     }
 
-    /* Left Black Card */
     .contact-card{
       background:var(--panel);color:#f3f4f6;padding:40px;
       display:flex;flex-direction:column;
@@ -235,7 +228,6 @@
             </a>
             <a href="./cart.html" class="icon-btn">
                 <img src="/public/cart.png" alt="cart">
-                <!-- <span class="cart-badge">2</span> -->
             </a>
             <div class="search-box">
                 <span><img src="/public/Search.svg" alt=""></span>
@@ -474,19 +466,15 @@
     </footer>
 
   <script>
-    // JavaScript for the FAQ accordion functionality
     document.querySelectorAll('.acc-item').forEach(item => {
       const btn = item.querySelector('.acc-btn');
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
         
-        // Close all items
         document.querySelectorAll('.acc-item').forEach(i => {
           i.classList.remove('open');
           i.querySelector('.acc-btn').setAttribute('aria-expanded', 'false');
         });
-
-        // Open the clicked item if it was closed
         if (!isOpen) {
           item.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
@@ -494,7 +482,6 @@
       });
     });
 
-    // Basic form submission demo (prevents page reload)
     document.querySelector('form')?.addEventListener('submit', (e) => {
       e.preventDefault();
       alert('Message Sent! (Form submission is simulated.)');

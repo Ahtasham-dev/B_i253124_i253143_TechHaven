@@ -10,7 +10,6 @@ body {
   color: #333;
 }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +44,6 @@ nav a:hover {
   color: #ff3366;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -129,7 +127,6 @@ nav a:hover {
   font-size: 14px;
 }
 
-/* Hero Section */
 .hero {
   background: linear-gradient(135deg, #e8f0f5 0%, #d9e5ec 100%);
   background-image: url("public/hero_bg.jpg");
@@ -191,7 +188,6 @@ nav a:hover {
   height: auto;
 }
 
-/* Best of Tech Haven Section */
 .section {
   padding: 80px 60px;
   background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
@@ -353,7 +349,6 @@ nav a:hover {
   font-weight: 500;
 }
 
-/* Trending Section */
 .trending {
   background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   padding: 80px 60px;
@@ -406,7 +401,6 @@ nav a:hover {
   height: auto;
 }
 
-/* Footer */
 footer {
   background: #1a1a1a;
   color: white;
@@ -523,7 +517,6 @@ footer {
   display: none;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -586,7 +579,6 @@ footer {
     position: relative;
   }
 
-  /* Mobile Navbar */
   nav ul {
     position: fixed;
     top: 0;

@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
   <header>
         <nav>
             <ul>
@@ -40,7 +39,6 @@
             </a>
             <a href="./cart.html" class="icon-btn">
             <img src="/public/cart.png" alt="cart">
-            <!-- <span class="cart-badge">2</span> -->
             </a>
             <div class="search-box">
                 <span><img src="/public/Search.svg" alt=""></span>
@@ -49,11 +47,9 @@
         </div>
     </header>
 
-  <!-- ========== MAIN CONTENT ========== -->
   <main>
     <div class="container">
 
-      <!-- LEFT: Payment Form -->
       <section class="form-section" aria-labelledby="payment-heading">
         <h2 id="payment-heading">Let's Make Payment</h2>
         <p>To start your subscription, input your card details to make payment. You will be redirected to your bank's authorization page.</p>
@@ -97,7 +93,6 @@
         </form>
       </section>
 
-      <!-- RIGHT: Summary -->
       <aside class="summary-box" aria-labelledby="summary-heading">
         <h3 id="summary-heading">You're paying,</h3>
         <div class="price" aria-hidden="true">$450.00</div>
@@ -130,16 +125,14 @@
         <button type="button" class="place-order">Place Order</button>
       </aside>
 
-    </div> <!-- /.container -->
+    </div>
   </main>
 
-  <!-- ========== SIMPLE CTA / INFO ========== -->
   <section style="max-width:1200px;margin:30px auto;padding:0 60px;">
     <h2>Lets make Payments</h2>
     <p>To start your subscription, input your card details to make payment. You will be redirected to your bank's authorization page.</p>
   </section>
 
-  <!-- ========== FOOTER ========== -->
   <footer>
         <div class="footer-content">
             <div class="footer-column footer-logo-column">
@@ -207,12 +200,10 @@
         </div>
     </footer>
 
-  <!-- ========== OPTIONAL: Small script to handle Apply / UX (no external libs) ========== -->
   <script>
     document.getElementById('apply-discount')?.addEventListener('click', function () {
       const input = document.getElementById('discount');
       if (!input) return;
-      // simple visual feedback
       this.textContent = 'Applied';
       this.disabled = true;
       input.style.borderColor = '#7a72e8';
