@@ -6,7 +6,7 @@ const products = [
         category: "Laptop",
         price: 98.3,
         colors: 6,
-        image: "/public/products/15-inch-macbook-air-2tb-midnight.png",
+        image: "/public/ai/laptop1.png",
         badge: "Best Seller",
         badgeType: "red",
         specs: {
@@ -24,7 +24,7 @@ const products = [
         category: "Headphones",
         price: 98.3,
         colors: 4,
-        image: "/public/products/airpods-max.png",
+        image: "/public/ai/headphone.png",
         badge: "Extra 20% off",
         badgeType: "green"
     },
@@ -34,7 +34,7 @@ const products = [
         category: "Home Appliance",
         price: 98.3,
         colors: 1,
-        image: "/public/products/apple-tv-4k-wifi.png",
+        image: "/public/ai/monitor.png",
         badge: "Sustainable Materials",
         badgeType: "blue"
     },
@@ -44,7 +44,7 @@ const products = [
         category: "Phone",
         price: 98.3,
         colors: 6,
-        image: "/public/products/apple-iphone-15-pro-1tb-blue-titanium.png",
+        image: "/public/ai/iphone.png",
         badge: "Best Seller",
         badgeType: "red"
     },
@@ -54,7 +54,7 @@ const products = [
         category: "Watch",
         price: 98.3,
         colors: 4,
-        image: "/public/products/apple-watch-series-9-aluminum.png",
+        image: "/public/ai/head_pack.png",
         badge: "Extra 20% off",
         badgeType: "green"
     },
@@ -64,7 +64,7 @@ const products = [
         category: "Headphones",
         price: 98.3,
         colors: 1,
-        image: "/public/products/airpods-pro-2nd-generation.png",
+        image: "/public/ai/phone2.png",
         badge: "Best Seller",
         badgeType: "red"
     },
@@ -74,7 +74,7 @@ const products = [
         category: "Home Appliance",
         price: 98.3,
         colors: 6,
-        image: "/public/products/silver-lamicall-adjustable-laptop-riser.png",
+        image: "/public/ai/laptop_gaming.png",
         badge: "Extra 20% off",
         badgeType: "green"
     },
@@ -84,7 +84,7 @@ const products = [
         category: "Phone",
         price: 98.3,
         colors: 1,
-        image: "/public/products/11-inch-ipad-pro-512gb-space-gray.png",
+        image: "/public/ai/apple_pack.png",
         badge: "Best Seller",
         badgeType: "red"
     },
@@ -94,7 +94,7 @@ const products = [
         category: "Laptop",
         price: 98.3,
         colors: 4,
-        image: "/public/products/14-inch-macbook-pro-12-core-1tb-space-black.png",
+        image: "/public/ai/hero.png",
         badge: "Extra 10% off",
         badgeType: "green"
     },
@@ -104,7 +104,7 @@ const products = [
         category: "Phone",
         price: 98.3,
         colors: 6,
-        image: "/public/products/apple-iphone-14-128gb-blue.png",
+        image: "/public/ai/phone1.png",
         badge: "Best Seller",
         badgeType: "red"
     },
@@ -114,27 +114,9 @@ const products = [
         category: "Watch",
         price: 98.3,
         colors: 4,
-        image: "/public/products/apple-watch-ultra-2.png",
+        image: "/public/ai/phone2.png",
         badge: "Sustainable Materials",
         badgeType: "blue"
-    },
-    {
-        id: 12,
-        name: "13-inch Macbook Air Gray 512GB",
-        category: "Laptop",
-        price: 98.3,
-        colors: 1,
-        image: "/public/products/13-inch-macbokk-air-256gb-space-gray.png",
-        badge: "Extra 20% off",
-        badgeType: "green",
-        specs: {
-            resolution: "1440 × 1964 pixels",
-            gpu: "12 Core GPU",
-            cpu: "6 Core CPU",
-            ssd: "512GB",
-            webcam: "720p FaceTime HD camera",
-            technology: "Liquid Retina XDR display"
-        }
     }
 ];
 
@@ -266,7 +248,7 @@ function renderProducts(productsToRender) {
         <a href="./productDetails.html?id=${product.id}" class="product-card">
             <div class="product-image">
                 ${product.badge ? `<span class="product-badge badge-${product.badgeType}">${product.badge}</span>` : ''}
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='/public/products/apple-tv-4k-wifi.png'">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='/public/ai/ai.png'">
             </div>
             <div class="product-info">
                 <h3 class="product-title">${product.name}</h3>

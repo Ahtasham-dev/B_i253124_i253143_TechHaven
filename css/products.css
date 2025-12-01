@@ -5,6 +5,10 @@
     background: #fafafa;
 }
 
+a {
+    text-decoration: none;
+}
+
 .products-container {
     display: flex;
     gap: 40px;

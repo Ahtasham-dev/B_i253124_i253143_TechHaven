@@ -97,6 +97,9 @@ function renderCart() {
       } else if (target.matches(".cart-item-remove")) {
         const index = cartItems.findIndex((p) => p.id === id);
         if (index !== -1) {
+          const deletedItem = cartItems[index];
+          console.log("Item deleted from cart:", deletedItem);
+          alert(`Item "${deletedItem.name}" has been removed from your cart.`);
           cartItems.splice(index, 1);
           renderCart();
         }
