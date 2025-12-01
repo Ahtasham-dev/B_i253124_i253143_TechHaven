@@ -4,17 +4,25 @@ const products = [
         id: 1,
         name: "15-inch Macbook Air 2TB",
         category: "Laptop",
-        price: 98.30,
+        price: 98.3,
         colors: 6,
         image: "/public/products/15-inch-macbook-air-2tb-midnight.png",
         badge: "Best Seller",
-        badgeType: "red"
+        badgeType: "red",
+        specs: {
+            resolution: "3024 × 1964 pixels",
+            gpu: "10 Core GPU",
+            cpu: "8 Core CPU",
+            ssd: "2TB",
+            webcam: "1080p FaceTime HD camera",
+            technology: "Liquid Retina XDR display"
+        }
     },
     {
         id: 2,
         name: "Airpods Max",
         category: "Headphones",
-        price: 98.30,
+        price: 98.3,
         colors: 4,
         image: "/public/products/airpods-max.png",
         badge: "Extra 20% off",
@@ -24,7 +32,7 @@ const products = [
         id: 3,
         name: "Apple TV 4k Wifi",
         category: "Home Appliance",
-        price: 98.30,
+        price: 98.3,
         colors: 1,
         image: "/public/products/apple-tv-4k-wifi.png",
         badge: "Sustainable Materials",
@@ -34,7 +42,7 @@ const products = [
         id: 4,
         name: "Iphone 13 Pro",
         category: "Phone",
-        price: 98.30,
+        price: 98.3,
         colors: 6,
         image: "/public/products/apple-iphone-15-pro-1tb-blue-titanium.png",
         badge: "Best Seller",
@@ -44,7 +52,7 @@ const products = [
         id: 5,
         name: "Apple Smart Watch",
         category: "Watch",
-        price: 98.30,
+        price: 98.3,
         colors: 4,
         image: "/public/products/apple-watch-series-9-aluminum.png",
         badge: "Extra 20% off",
@@ -54,7 +62,7 @@ const products = [
         id: 6,
         name: "Air Pods Pro",
         category: "Headphones",
-        price: 98.30,
+        price: 98.3,
         colors: 1,
         image: "/public/products/airpods-pro-2nd-generation.png",
         badge: "Best Seller",
@@ -64,7 +72,7 @@ const products = [
         id: 7,
         name: "Adjustable Laptop Riser",
         category: "Home Appliance",
-        price: 98.30,
+        price: 98.3,
         colors: 6,
         image: "/public/products/silver-lamicall-adjustable-laptop-riser.png",
         badge: "Extra 20% off",
@@ -74,7 +82,7 @@ const products = [
         id: 8,
         name: "Ipad Pro",
         category: "Phone",
-        price: 98.30,
+        price: 98.3,
         colors: 1,
         image: "/public/products/11-inch-ipad-pro-512gb-space-gray.png",
         badge: "Best Seller",
@@ -84,7 +92,7 @@ const products = [
         id: 9,
         name: "14-inch Macbook Pro 12 Black",
         category: "Laptop",
-        price: 98.30,
+        price: 98.3,
         colors: 4,
         image: "/public/products/14-inch-macbook-pro-12-core-1tb-space-black.png",
         badge: "Extra 10% off",
@@ -94,7 +102,7 @@ const products = [
         id: 10,
         name: "Phone",
         category: "Phone",
-        price: 98.30,
+        price: 98.3,
         colors: 6,
         image: "/public/products/apple-iphone-14-128gb-blue.png",
         badge: "Best Seller",
@@ -104,7 +112,7 @@ const products = [
         id: 11,
         name: "Apple Watch Ultra 2",
         category: "Watch",
-        price: 98.30,
+        price: 98.3,
         colors: 4,
         image: "/public/products/apple-watch-ultra-2.png",
         badge: "Sustainable Materials",
@@ -112,13 +120,21 @@ const products = [
     },
     {
         id: 12,
-        name: "13-inch Macbok Air Gray",
+        name: "13-inch Macbook Air Gray 512GB",
         category: "Laptop",
-        price: 98.30,
+        price: 98.3,
         colors: 1,
         image: "/public/products/13-inch-macbokk-air-256gb-space-gray.png",
         badge: "Extra 20% off",
-        badgeType: "green"
+        badgeType: "green",
+        specs: {
+            resolution: "1440 × 1964 pixels",
+            gpu: "12 Core GPU",
+            cpu: "6 Core CPU",
+            ssd: "512GB",
+            webcam: "720p FaceTime HD camera",
+            technology: "Liquid Retina XDR display"
+        }
     }
 ];
 
@@ -247,7 +263,7 @@ function renderProducts(productsToRender) {
     }
     
     productsGrid.innerHTML = productsToRender.map(product => `
-        <div class="product-card">
+        <a href="./productDetails.html?id=${product.id}" class="product-card">
             <div class="product-image">
                 ${product.badge ? `<span class="product-badge badge-${product.badgeType}">${product.badge}</span>` : ''}
                 <img src="${product.image}" alt="${product.name}" onerror="this.src='/public/products/apple-tv-4k-wifi.png'">
@@ -260,7 +276,7 @@ function renderProducts(productsToRender) {
                     <span>${product.colors} ${product.colors === 1 ? 'Colour' : 'Colour'}</span>
                 </div>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 

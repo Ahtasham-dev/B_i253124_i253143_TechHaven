@@ -1,5 +1,18 @@
 // Product Details Page JavaScript
 
+// Helper: read query parameter
+function getQueryParam(key) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(key);
+}
+
+// Determine current product (fallback to the main MacBook Pro)
+let currentProductId = parseInt(getQueryParam("id") || "9", 10);
+let currentProduct =
+    typeof products !== "undefined"
+        ? products.find((p) => p.id === currentProductId) || products.find((p) => p.id === 9)
+        : null;
+
 // Quantity Management
 let quantity = 2;
 
@@ -66,10 +79,15 @@ function toggleSection(sectionId) {
 // Load Related Products
 function loadRelatedProducts() {
     // Get products from products.js
-    if (typeof products !== 'undefined') {
-        // Filter to show 3 related products (excluding current product)
-        // For demo, showing first 3 products
-        const relatedProducts = products.slice(0, 3);
+    if (typeof products !== "undefined") {
+        // Show 3 related products from the same category, excluding current product
+        const relatedProducts = products
+            .filter(
+                (p) =>
+                    (!currentProduct || p.category === currentProduct.category) &&
+                    (!currentProduct || p.id !== currentProduct.id)
+            )
+            .slice(0, 3);
         const relatedGrid = document.getElementById('relatedProductsGrid');
         
         relatedGrid.innerHTML = relatedProducts.map(product => `
@@ -108,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (addToBagBtn) {
         addToBagBtn.addEventListener('click', function() {
             alert(`Added ${quantity} item(s) to bag!`);
+            console.log(`Added ${quantity} item(s) to bag!`)
             // Here you would typically update cart state
         });
     }
@@ -121,15 +140,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const heartIcon = this.querySelector('span');
             heartIcon.textContent = isFavorited ? '♥' : '♡';
             this.style.color = isFavorited ? '#ff3366' : '#1a1a1a';
+            console.log("Added item to favourites");
+            alert("Added item to favourites");
         });
     }
     
     // Compare button functionality
     const compareBtn = document.querySelector('.btn-compare');
-    if (compareBtn) {
-        compareBtn.addEventListener('click', function() {
-            alert('Product added to comparison!');
-            // Here you would typically add to comparison list
+    if (compareBtn && currentProduct) {
+        compareBtn.addEventListener('click', function () {
+            const category = encodeURIComponent(currentProduct.category);
+            const baseId = currentProduct.id;
+            // Redirect to compare page with base product and category
+            window.location.href = `compare.html?baseId=${baseId}&category=${category}`;
         });
     }
 });
