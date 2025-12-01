@@ -1,0 +1,88 @@
+.navbar ul {
+    list-style-type: none;
+    background-color: rgb(202, 230, 255);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+    padding:15px;
+    display: block;
+    text-align:center ;
+}
+.navbar a:hover{
+    background-color: rgb(180, 111, 111);
+}
+.navbar li {
+    float: left;
+}
+
+div {
+text-align: justify;
+width: 230px;
+height: 40px;
+padding-left: 100px;
+margin-top: 40px;
+border-radius: 20px;
+
+}
+
+#div1 {
+    text-align: justify;
+    
+    padding-top: 400px;
+}
+#par2 {
+     text-align: justify;
+     position: absolute;
+  top: 460px;
+  
+  left: 380px;
+  margin: 105px;
+  font-size: 15px;
+}
+    padding-top: 800px;
+}
+
+#foot {
+     text-align: justify;
+    
+    padding-top: 1000px;
+}
+#image {
+    position: absolute;
+  top: 160px;
+  height: 400px;
+  left: 270px;
+  margin: 105px;
+  font-size: 10px;
+}
+
+#image2 {
+    position: absolute;
+  top: 160px;
+  height: 400px;
+  left: 480px;
+  margin: 105px;
+  font-size: 10px;
+}
+
+#image3 {
+    position: absolute;
+  top: 0px;
+  height: 40px;
+  left: 295px;
+  margin: 65px;
+  font-size: 5px;
+  width: 10px;
+}
+
+#image4 {
+    position: absolute;
+  top: 800px;
+ 
+left: 0px;
+  
+}
